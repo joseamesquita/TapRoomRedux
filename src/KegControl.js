@@ -36,14 +36,14 @@ class KegControl extends React.Component {
   //filter the previous version of the item out of the list with filter()
   //then add the dited version of the item to the list with concat()
   //concat() copies the array and adds to the end of the array 
-  handleEditingKegInList = (itemToEdit) => {
-    const editedMasterItemList = this.state.masterItemList
-      .filter(item => item.id !== this.state.selectedItem.id)
-      .concat(itemToEdit);
+  handleEditingKegInList = (kegToEdit) => {
+    const editedMasterKegList = this.state.masterKegList
+      .filter(keg => keg.id !== this.state.selectedKeg.id)
+      .concat(kegToEdit);
     // we set masterItemList to be equal to the list with the updated list
-    this.setState({ masterItemList: editedMasterItemList });
+    this.setState({ masterKegList: editedMasterKegList });
     this.setState({ editing: false });
-    this.setState({ selectedItem: null });
+    this.setState({ selectedKeg: null });
   }
 
   handleEditClick = () => {
@@ -53,10 +53,10 @@ class KegControl extends React.Component {
 
 
   handleClick = () => {
-    if (this.state.selectedItem != null) {
+    if (this.state.selectedKeg != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedItem: null,
+        selectedKeg: null,
         editing: false
       });
     } else {
