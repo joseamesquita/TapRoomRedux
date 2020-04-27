@@ -70,22 +70,21 @@ class KegControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    // pass handleEditingItemInList as a prop to our EditItemForm component
     if (this.state.editing) {
-      currentlyVisibleState = <EditItemForm item={this.state.selectedItem} onEditItem={this.handleEditingItemInList} />
-      buttonText = "Return to Item List";
+      currentlyVisibleState = <EditKegForm keg={this.state.selectedKeg} onEditKeg={this.handleEditingKegInList} />
+      buttonText = "Return to Keg List";
     }
-    else if (this.state.selectedItem != null) {
-      currentlyVisibleState = <ItemDetail item={this.state.selectedItem} onClickingDelete={this.handleDeletingItem} onClickingEdit={this.handleEditClick} />
-      buttonText = "Return to Item List";
+    else if (this.state.selectedKeg != null) {
+      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingDelete={this.handleDeletingKeg} onClickingEdit={this.handleEditClick} />
+      buttonText = "Return to Keg List";
     }
     else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingNewItemToList} />;
-      buttonText = "Return to Item List";
+      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
+      buttonText = "Return to Keg List";
     } else {
 
-      currentlyVisibleState = <ItemList itemList={this.state.masterItemList} onItemSelection={this.handleChangingSelectedItem} />;
-      buttonText = "Add Item";
+      currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />;
+      buttonText = "Add Keg";
     }
     return (
       <React.Fragment>
@@ -96,4 +95,4 @@ class KegControl extends React.Component {
   }
 }
 
-export default ItemControl;
+export default KegControl;
