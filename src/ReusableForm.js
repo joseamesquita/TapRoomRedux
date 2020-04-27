@@ -18,9 +18,13 @@ function ReusableForm(props) {
           name="price"
           placeholder="price of Root Beer" />
         <input
-          type
+          type="text"
           name="flavor"
           placeholder="flavor of Root Beer" />
+        <input
+          type="text"
+          name="quanity"
+          placeholder="quanitty of Root Beer" />
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
