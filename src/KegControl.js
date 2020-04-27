@@ -33,21 +33,16 @@ class KegControl extends React.Component {
     this.setState({ selectedKeg: null });
   }
 
-  //filter the previous version of the item out of the list with filter()
-  //then add the dited version of the item to the list with concat()
-  //concat() copies the array and adds to the end of the array 
   handleEditingKegInList = (kegToEdit) => {
     const editedMasterKegList = this.state.masterKegList
       .filter(keg => keg.id !== this.state.selectedKeg.id)
       .concat(kegToEdit);
-    // we set masterItemList to be equal to the list with the updated list
     this.setState({ masterKegList: editedMasterKegList });
     this.setState({ editing: false });
     this.setState({ selectedKeg: null });
   }
 
   handleEditClick = () => {
-    console.log("handleEditClick reached!");
     this.setState({ editing: true });
   }
 
@@ -71,11 +66,14 @@ class KegControl extends React.Component {
     let buttonText = null;
 
     if (this.state.editing) {
-      currentlyVisibleState = <EditKegForm keg={this.state.selectedKeg} onEditKeg={this.handleEditingKegInList} />
+      currentlyVisibleState = <EditKegForm keg={this.state.selectedKeg}
+        onEditKeg={this.handleEditingKegInList} />
       buttonText = "Return to Keg List";
     }
     else if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingDelete={this.handleDeletingKeg} onClickingEdit={this.handleEditClick} />
+      currentlyVisibleState = <KegDetail keg={this.state.selectedKeg}
+        onClickingDelete={this.handleDeletingKeg}
+        onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Keg List";
     }
     else if (this.state.formVisibleOnPage) {
@@ -83,8 +81,9 @@ class KegControl extends React.Component {
       buttonText = "Return to Keg List";
     } else {
 
-      currentlyVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg} />;
-      buttonText = "Add Keg";
+      currentlyVisibleState = <KegList kegList={this.state.masterKegList}
+        onKegSelection={this.handleChangingSelectedKeg} />;
+      buttonText = "Add a Keg";
     }
     return (
       <React.Fragment>
