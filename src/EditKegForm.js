@@ -1,10 +1,10 @@
 import React from "react";
-import ReusableFrom from "./ReusableForm";
+// import ReusableFrom from "./ReusableForm";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
 
 function EditKegForm(props) {
-  const { keg } = props;
+  // const { keg } = props;
 
   function handleEditKegFormSubmission(event) {
     event.preventDefault();
@@ -25,7 +25,7 @@ function EditKegForm(props) {
   );
 }
 
-EditKegForm.proptypes = {
+EditKegForm.propTypes = {
   onEditKeg: PropTypes.func
 };
 
