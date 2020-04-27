@@ -1,11 +1,9 @@
 import React from "react";
-import ReusableFrom from "./ReusableForm";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
 import ReusableForm from "./ReusableForm";
 
 function EditKegForm(props) {
-  // const { keg } = props;
 
   function handleEditKegFormSubmission(event) {
     event.preventDefault();
