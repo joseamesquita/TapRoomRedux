@@ -14,6 +14,7 @@ function EditKegForm(props) {
       name: event.target.name.value,
       price: event.target.price.value,
       flavor: event.target.flavor.value,
+      quantity: event.target.quantity.value,
       id: v4()
     })
   }
