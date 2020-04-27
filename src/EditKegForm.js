@@ -1,7 +1,8 @@
 import React from "react";
-// import ReusableFrom from "./ReusableForm";
+import ReusableFrom from "./ReusableForm";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
+import ReusableForm from "./ReusableForm";
 
 function EditKegForm(props) {
   // const { keg } = props;
@@ -19,8 +20,9 @@ function EditKegForm(props) {
 
   return (
     <React.Fragment>
-      formSubmissionHandler = {handleEditKegFormSubmission}
-      buttonText = "Update Keg" />
+      <ReusableForm
+        formSubmissionHandler={handleEditKegFormSubmission}
+        buttonText="Update Keg" />
     </React.Fragment>
   );
 }
