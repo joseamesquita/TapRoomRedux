@@ -2,17 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Keg(props) {
+  const styles = {
+    fontFamily: 'sans-serif',
+    paddingTop: '50px',
+    textAlign: 'center'
+  }
   return (
     <React.Fragment>
       <div onClick={() => props.whenKegClicked(props.id)}>
-        <h3>{props.name}</h3>
-        <h3>{props.brand}</h3>
-        <h3>{props.price}</h3>
-        <h3>{props.flavor}</h3>
-        <h3>{props.quantity}</h3>
+        <div style={styles}>
+          <h3>Name of Keg: {props.name}</h3>
+          <h3>Brand of Keg: {props.brand}</h3>
+          <h3>Price of Keg: ${props.price}</h3>
+          <h3>Flavor of Keg: {props.flavor}</h3>
+          <h3>Quantity of Keg: {props.quantity}</h3>
+        </div>
         <button onClick={() => props.whenKegSellClicked(props.id)} type="submit">Sell Keg</button>
-      </div>
-    </React.Fragment>
+      </div >
+    </React.Fragment >
   );
 }
 

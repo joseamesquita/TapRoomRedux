@@ -73,6 +73,10 @@ class KegControl extends React.Component {
   }
 
   render() {
+    const styles = {
+      backgroundColor: 'blue',
+      textAlign: 'center'
+    }
     let currentlyVisibleState = null;
     let buttonText = null;
 
@@ -101,7 +105,7 @@ class KegControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <button textAlign='center' onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );
   }

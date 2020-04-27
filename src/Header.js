@@ -1,8 +1,13 @@
 import React from "react";
 
 function Header() {
+  const styles = {
+    textAlign: 'center'
+  }
   return (
-    <h1>Tapper's</h1>
+    <div style={styles}>
+      <h1>Tapper's</h1>
+    </div>
   );
 }
 
