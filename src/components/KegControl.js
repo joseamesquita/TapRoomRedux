@@ -12,15 +12,24 @@ class KegControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterKegList: [],
       selectedKeg: null,
       editing: false
     };
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const newMasterKegList = this.state.masterKegList.concat(newKeg);
-    this.setState({ masterKegList: newMasterKegList });
+    const { dispatch } = this.props;
+    const { name, brand, price, flavor, quantity, id } = newKeg;
+    const action = {
+      type: 'ADD_KEG',
+      name: name,
+      brand: brand,
+      price: price,
+      flavor: flavor,
+      quantity: quantity,
+      id: id
+    }
+    dispatch(action);
     this.setState({ formVisibleOnPage: false });
   }
 
