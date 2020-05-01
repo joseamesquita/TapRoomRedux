@@ -39,9 +39,13 @@ class KegControl extends React.Component {
   }
 
   handleDeletingKeg = (id) => {
-    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
-    this.setState({ masterKegList: newMasterKegList });
-    this.setState({ selectedKeg: null });
+    const { dispatch } = this.props;
+    const action = {
+      tyep: 'DELETE_KEG',
+      id: id
+    }
+    dispatch(action);
+    this.setState({ selectedKeg });
   }
 
   handleSellingPint = (id) => {
@@ -56,12 +60,22 @@ class KegControl extends React.Component {
   }
 
   handleEditingKegInList = (kegToEdit) => {
-    const editedMasterKegList = this.state.masterKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(kegToEdit);
-    this.setState({ masterKegList: editedMasterKegList });
-    this.setState({ editing: false });
-    this.setState({ selectedKeg: null });
+    const { dispatch } = this.props;
+    const { name, brand, price, flavor, quantity, id } = kegToEdit;
+    const action = {
+      type: 'ADD_KEG',
+      name: name,
+      brand: brand,
+      price: price,
+      flavor: flavor,
+      quantity: quantity,
+      id: id
+    }
+    dispatch(action);
+    this.setState({
+      editing: false,
+      selectedKeg: null
+    });
   }
 
   handleEditClick = () => {
