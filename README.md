@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## TapRoom React-Redux
+
 ## Description
 
 Tappers was developed to track Kegs by their name, brand, price, flavor, and quantity. Users can view all Kegs in stock, update Kegs in stock, and sell pints from the Kegs quantities. 
