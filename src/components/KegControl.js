@@ -121,7 +121,7 @@ class KegControl extends React.Component {
         onClickingEdit={this.handleEditClick} />
       buttonText = "Return to Keg List";
     }
-    else if (this.state.formVisibleOnPage) {
+    else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
       buttonText = "Return to Keg List";
     } else {
