@@ -22,10 +22,10 @@ describe('kegListReducer', () => {
   }
   test('Should successfully delete a keg', () => {
     action = {
-      type: 'DELETE_TICKET',
+      type: 'DELETE_KEG',
       id: 1
     };
-    expect(kegListReducer(currentState, state)).toEqual({
+    expect(kegListReducer(currentState, action)).toEqual({
       2: {
         name: "Heineken",
         brand: "Heineken International",
@@ -34,8 +34,8 @@ describe('kegListReducer', () => {
         quantity: "64",
         id: 2
       }
-    })
-  })
+    });
+  });
 
   let action;
   const kegData = {
