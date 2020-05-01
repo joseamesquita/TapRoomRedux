@@ -46,7 +46,7 @@ class KegControl extends React.Component {
       id: id
     }
     dispatch(action);
-    this.setState({ selectedKeg });
+    this.setState({ selectedKeg: null });
   }
 
   handleSellingPint = (id) => {
