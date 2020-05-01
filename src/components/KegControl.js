@@ -12,7 +12,7 @@ class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
+      // formVisibleOnPage: false,
       selectedKeg: null,
       editing: false
     };
@@ -31,7 +31,7 @@ class KegControl extends React.Component {
       id: id
     }
     dispatch(action);
-    this.setState({ formVisibleOnPage: false });
+    // this.setState({ formVisibleOnPage: false });
   }
 
   handleChangingSelectedKeg = (id) => {
@@ -92,9 +92,9 @@ class KegControl extends React.Component {
         editing: false
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
+      // this.setState(prevState => ({
+      //   formVisibleOnPage: !prevState.formVisibleOnPage,
+      // }));
     }
   }
 
