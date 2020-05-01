@@ -2,6 +2,41 @@ import kegListReducer from '../../reducers/keg-list-reducer';
 
 describe('kegListReducer', () => {
 
+  const currentState = {
+    1: {
+      name: "Root Beer",
+      brand: "A&W's",
+      price: "$32",
+      flavor: "Rocky Road",
+      quantity: "64",
+      id: 1
+    },
+    2: {
+      name: "Heineken",
+      brand: "Heineken International",
+      price: "$64",
+      flavor: "Lager",
+      quantity: "64",
+      id: 2
+    }
+  }
+  test('Should successfully delete a keg', () => {
+    action = {
+      type: 'DELETE_TICKET',
+      id: 1
+    };
+    expect(kegListReducer(currentState, state)).toEqual({
+      2: {
+        name: "Heineken",
+        brand: "Heineken International",
+        price: "$64",
+        flavor: "Lager",
+        quantity: "64",
+        id: 2
+      }
+    })
+  })
+
   let action;
   const kegData = {
     name: "Root Beer",
