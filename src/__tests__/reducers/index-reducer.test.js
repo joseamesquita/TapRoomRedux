@@ -14,10 +14,24 @@ describe("rootReducer", () => {
   });
 
   test('Check that initial state of kegListReducer matches root reducer', () => {
-    expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, { type: null }));
+    const action = {
+      type: 'ADD_TICKET',
+      name: "Root Beer",
+      brand: "A&W's",
+      price: "$32",
+      flavor: "Rocky Road",
+      quantity: "64",
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().masterKegList).toEqual(kegListReducer(undefined, action));
   });
 
   test('Check that initial state of formVisibleReducer matches root reducer', () => {
-    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
+    const action = {
+      type: 'TOGGLE_FORM'
+    }
+    store.dispatch(action);
+    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
   });
 })
